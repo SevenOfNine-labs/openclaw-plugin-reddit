@@ -417,9 +417,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@modelcontextprotocol/sdk@npm:1.27.1":
-  version: 1.27.1
-  resolution: "@modelcontextprotocol/sdk@npm:1.27.1"
+"@modelcontextprotocol/sdk@npm:1.29.0":
+  version: 1.29.0
+  resolution: "@modelcontextprotocol/sdk@npm:1.29.0"
   dependencies:
     "@hono/node-server": "npm:^1.19.9"
     ajv: "npm:^8.17.1"
@@ -446,7 +446,7 @@ __metadata:
       optional: true
     zod:
       optional: false
-  checksum: 10/3cb0d61cfb916e555c85b4a527e772f88fcf9c6abacbe5eb5e965aac7c898190c416341ab3b3cba8c2d5f5ce4d513279fba3ad7784a0903d7ccd335decc55395
+  checksum: 10/ff551b97e06b661f95fec8fd34e112c446e69894a84a9979cdac369fb5de27f0a1a5c1f4e2a1f270cc60f93e54c28a8059a94ca51c3d528d2670ade874b244f9
   languageName: node
   linkType: hard
 
@@ -3066,7 +3066,7 @@ __metadata:
   resolution: "openclaw-plugin-reddit@workspace:."
   dependencies:
     "@eslint/js": "npm:^9.39.2"
-    "@modelcontextprotocol/sdk": "npm:1.27.1"
+    "@modelcontextprotocol/sdk": "npm:1.29.0"
     "@types/node": "npm:^25.5.0"
     "@vitest/coverage-v8": "npm:^4.1.0"
     eslint: "npm:^10.0.3"
