@@ -35,7 +35,7 @@
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.29.0",
     "reddit-mcp-server": "https://codeload.github.com/SevenOfNine-ai/reddit-mcp-server/tar.gz/aa188ec7aba1b6a81398c626dc0ddd45baa6fb68",
-    "tsx": "^4.22.3",
+    "tsx": "^4.23.11",
     "zod": "^4.4.3"
   },
   "devDependencies": {
