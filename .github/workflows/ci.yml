@@ -35,6 +35,14 @@ jobs:
 
       - name: Audit dependencies
         run: |
+          # `set +e` first, and it is load-bearing. Actions runs `run:` bodies as
+          # `bash -e {0}`, so `output=$(yarn ...)` failing exits the script at
+          # that assignment — before any of the handling below can look at the
+          # status. The first version of this step did exactly that: it produced
+          # no output at all and failed in two minutes, which is the same defect
+          # it exists to fix, one layer up. `set -uo pipefail` does not clear an
+          # `-e` that came in on the shell's own argv.
+          set +e
           set -uo pipefail
           # An advisory and an unreachable advisory API are different answers,
           # and this step reported them identically: a 60s socket timeout
