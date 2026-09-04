@@ -34,7 +34,29 @@ jobs:
         run: yarn test:coverage
 
       - name: Audit dependencies
-        run: yarn npm audit --all --recursive --no-deprecations --severity moderate
+        run: |
+          set -uo pipefail
+          # An advisory and an unreachable advisory API are different answers,
+          # and this step reported them identically: a 60s socket timeout
+          # reddened it with `Errors happened when preparing the environment`
+          # and no advisory found. Retry only that case, and never convert it
+          # into a pass — a security gate that cannot run must say so.
+          for attempt in 1 2 3; do
+            output=$(yarn npm audit --all --recursive --no-deprecations --severity moderate 2>&1)
+            status=$?
+            echo "$output"
+            if [ "$status" -eq 0 ]; then
+              exit 0
+            fi
+            if ! grep -q "Errors happened when preparing the environment" <<< "$output"; then
+              echo "::error::Audit found advisories at or above moderate severity."
+              exit "$status"
+            fi
+            echo "::warning::Attempt $attempt could not reach the advisory API; retrying."
+            sleep $((attempt * 15))
+          done
+          echo "::error::Audit could not reach the advisory API after 3 attempts. Not treating an unobtainable answer as a clean one."
+          exit 1
 
       - name: Build
         run: yarn build
