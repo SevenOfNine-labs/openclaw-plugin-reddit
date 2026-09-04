@@ -316,5 +316,26 @@
       "advanced": true,
       "sensitive": true
     }
+  },
+  "contracts": {
+    "tools": [
+      "test_reddit_mcp_server",
+      "get_reddit_post",
+      "get_top_posts",
+      "get_user_info",
+      "get_user_posts",
+      "get_user_comments",
+      "get_subreddit_info",
+      "get_trending_subreddits",
+      "get_post_comments",
+      "search_reddit",
+      "create_post",
+      "reply_to_post",
+      "edit_post",
+      "edit_comment",
+      "delete_post",
+      "delete_comment",
+      "vote_post"
+    ]
   }
 }
