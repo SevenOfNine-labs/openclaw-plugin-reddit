@@ -36,15 +36,15 @@
     "@modelcontextprotocol/sdk": "1.30.0",
     "reddit-mcp-server": "https://codeload.github.com/SevenOfNine-ai/reddit-mcp-server/tar.gz/aa188ec7aba1b6a81398c626dc0ddd45baa6fb68",
     "tsx": "^4.23.12",
-    "zod": "^4.4.3"
+    "zod": "^4.5.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
     "@types/node": "^26.2.0",
     "@vitest/coverage-v8": "^4.1.11",
-    "eslint": "^10.9.0",
+    "eslint": "^10.9.1",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.67.0",
+    "typescript-eslint": "^8.68.0",
     "vitest": "^4.1.11"
   },
   "peerDependencies": {
@@ -52,6 +52,7 @@
   },
   "resolutions": {
     "@hono/node-server": "^1.19.15",
+    "@humanfs/node": "^0.16.8",
     "ajv@^8": "^8.18.0",
     "axios": "^1.18.0",
     "brace-expansion": "^5.0.9",
@@ -69,7 +70,7 @@
     "path-to-regexp": "^8.4.0",
     "picomatch": "^4.0.4",
     "postcss": "^8.5.23",
-    "qs": "^6.15.2",
+    "qs": "^6.16.0",
     "tar": "^7.5.21",
     "undici": "^7.29.0",
     "vite": "^8.0.16"
